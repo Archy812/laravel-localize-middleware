@@ -80,7 +80,7 @@ class Header extends Determiner
      */
     public function getSupported(array $acceptedLanguages): ?string
     {
-        $supportedLocales = locales()->pluck('id');
+        $supportedLocales = config('translatable.locales') ?? [config('app.locale')];
 
         foreach ($acceptedLanguages as $accepted) {
             // Turn en-gb into en
