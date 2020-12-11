@@ -103,7 +103,7 @@ class DeterminerManager extends Manager
                 return $driver !== 'stack';
             })
             ->map(function ($driver) {
-                return $this->driver($driver)->setFallback(null);
+                return $this->driver($driver)->setFallback($this->container['config']['app']['fallback_locale']);
             });
 
         return (new Determiners\Stack($determiners))
