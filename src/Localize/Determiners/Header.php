@@ -49,7 +49,7 @@ class Header extends Determiner
      *
      * @return array
      */
-    public function sortBySignificance(string $header): array
+    public function sortBySignificance($header): array
     {
         $accepts = explode(',', $header);
         $acceptLanguages = [];
